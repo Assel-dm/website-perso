@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLAM EKF - Axel Fouchard</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Projet : SLAM Visuel avec EKF</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">À propos</a></li>
+        <li><a href="../projects.html" class="active">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img src="../assets/img/slam-ekf.png" alt="SLAM EKF" style="width:100%; max-width:700px; display:block; margin:auto; border-radius:10px;">
+      <h2>Résumé</h2>
+      <p>Ce projet consistait à implémenter un système de SLAM visuel à l’aide d’un filtre de Kalman étendu (EKF) en MATLAB. L'objectif était de permettre à un robot équipé d'une caméra de se localiser et de cartographier un environnement inconnu en temps réel. La détection se fait par des mires fiduciaires. La trajectoire estimée est ensuite comparée à une trajectoire de référence fournie par OptiTrack. Bien que le pipeline soit complet (prédiction, détection, correction), la précision est affectée par des erreurs de modélisation et des jacobiennes imprécises.</p>
+      <a href="../projects.html" class="btn">← Retour aux projets</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Axel Fouchard</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

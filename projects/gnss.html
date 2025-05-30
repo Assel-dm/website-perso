@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GNSS - Axel Fouchard</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Projet : Positionnement GNSS</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">À propos</a></li>
+        <li><a href="../projects.html" class="active">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img src="../assets/img/gnss.png" alt="GNSS" style="width:100%; max-width:700px; display:block; margin:auto; border-radius:10px;">
+      <h2>Résumé</h2>
+      <p>Ce projet visait à implémenter une chaîne complète de positionnement GNSS, de la réception du signal brut à l’estimation raffinée de la position. Plusieurs algorithmes ont été utilisés et comparés, comme WLS (Weighted Least Squares) et EKF (Extended Kalman Filter). Les corrections des erreurs (retard ionosphérique, biais d’horloge, géométrie des satellites) ont permis d’améliorer significativement la précision du positionnement. Une visualisation sur Google Earth a permis de comparer les trajectoires estimées avec la vérité terrain.</p>
+      <a href="../projects.html" class="btn">← Retour aux projets</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Axel Fouchard</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
