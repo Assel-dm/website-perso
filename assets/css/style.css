@@ -90,6 +90,38 @@ footer {
     color: #fff;
     margin-top: 40px;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    background-color: #fff;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    text-align: center;
+    padding: 10px;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    border-color: #00ccff;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
