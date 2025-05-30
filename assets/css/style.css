@@ -1,0 +1,110 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    text-decoration: underline;
+    color: #00ccff;
+}
+
+/* Bouton menu mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contenu */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e8f4f8;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* Projets */
+.project-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        margin-top: 10px;
+    }
+}
