@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GNSS - Axel Fouchard</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Modérateur autonome pour chat Twitch</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">À propos</a></li>
+        <li><a href="../projects.html" class="active">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img src="../assets/img/gnss.png" alt="GNSS" style="width:100%; max-width:700px; display:block; margin:auto; border-radius:10px;">
+      <h2>Résumé</h2>
+      <p>Ce projet de Machine Learning a été mené dans le but de concevoir un modérateur automatique capable de détecter le
+    <strong>sentiment (positif ou négatif)</strong> des messages dans un chat Twitch, plateforme où le flux rapide et non filtré
+    des messages rend la modération humaine difficile.</p>
+      <h3> Dataset</h3>
+      <p>
+        Nous avons collecté plus de 10000 messages de 20 streamers francophones via l’API IRC de Twitch. Après un nettoyage du texte
+        (émoticônes, abréviations, caractères spéciaux…), chaque message a été annoté automatiquement en
+        <strong>positif</strong>, <strong>négatif</strong> ou <strong>neutre</strong> à l’aide de la bibliothèque <code>textblob-fr</code>.
+      </p>
+    
+      <h3> Modélisation</h3>
+      <ul>
+        <li>Utilisation d’un <strong>modèle de régression logistique</strong> (inspiré d’un neurone) basé sur le modèle Bag-of-Words.</li>
+        <li>Le modèle atteint une précision de <strong>89 %</strong> sur les messages test.</li>
+        <li>Une interface graphique permet de tester le modèle et de corriger manuellement les erreurs de prédiction, avec enregistrement pour un futur réapprentissage.</li>
+      </ul>
+    
+      <h3> Approches supplémentaires</h3>
+      <ul>
+        <li><strong>Méthodes supervisées</strong> (classification) avec pondération des mots (accuracy ≈ 83 %).</li>
+        <li><strong>Clustering non supervisé</strong> via PCA + KMeans pour identifier automatiquement plusieurs catégories de messages, dont certains à caractère toxique ("ez", sarcasme…).</li>
+      </ul>
+    
+      <h3>Limites & perspectives</h3>
+      <p>
+        Les méthodes actuelles restent limitées face au sarcasme et à la subtilité du langage Twitch. Une version future pourrait
+        intégrer des modèles plus puissants (ex: BERT) et être déployée directement comme outil pour streamer.
+      </p>
+      <a href="../projects.html" class="btn">← Retour aux projets</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Axel Fouchard</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
