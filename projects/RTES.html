@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Time Embedded System : EDF-Scheduling - Axel Fouchard</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Real Time Embedded System : EDF-Scheduling</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">À propos</a></li>
+        <li><a href="../projects.html" class="active">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img src="../assets/img/edf.png" alt="EDF-Scheduling" style="width:100%; max-width:700px; display:block; margin:auto; border-radius:10px;">
+      <h2>Résumé</h2>
+      <p>
+        Ce projet a consisté à étudier la planification d’un ensemble de tâches temps réel non préemptives. L’objectif était de :
+        <strong>vérifier la faisabilité</strong> de l’ordonnancement, <strong>minimiser le temps d’attente</strong> global, et <strong>autoriser τ5 à manquer sa deadline</strong>.
+      </p>
+    
+      <h3>Tâches à planifier</h3>
+      <p>
+        7 tâches définies par leur temps d’exécution (C) et leur période (T) :
+      </p>
+      <ul>
+        <li>τ1 : C=2, T=10</li>
+        <li>τ2 : C=3, T=10</li>
+        <li>τ3 : C=2, T=20</li>
+        <li>τ4 : C=2, T=20</li>
+        <li>τ5 : C=2, T=40</li>
+        <li>τ6 : C=2, T=40</li>
+        <li>τ7 : C=3, T=80</li>
+      </ul>
+    
+      <h3>Méthodologie</h3>
+      <ul>
+        <li>Calcul de l’<strong>hyperpériode</strong> : LCM(10, 20, 40, 80) = 80</li>
+        <li>Génération des jobs par tâche jusqu’à l’hyperpériode</li>
+        <li>Implémentation de l’algorithme <strong>EDF non préemptif</strong> :
+          <ul>
+            <li>Les jobs sont triés par deadline la plus proche</li>
+            <li>Un job lancé s’exécute entièrement (non préemptif)</li>
+            <li>En cas d’égalité, priorité à la tâche au plus petit index</li>
+          </ul>
+        </li>
+      </ul>
+    
+      <h3>Résultats</h3>
+      <ul>
+        <li>Le système est <strong>faisable</strong> (utilisation ≈ 0.838)</li>
+        <li>Toutes les deadlines ont été respectées, y compris dans le scénario avec τ5 relâchée</li>
+        <li>Analyse des temps d’attente et des temps de réponse enregistrée pour chaque job</li>
+      </ul>
+    
+      <h3>Complexité</h3>
+      <p>
+        La complexité de la simulation a été estimée à <code>O(n · H²)</code> avec <code>n</code> le nombre de tâches et <code>H</code> l’hyperpériode. Acceptable pour des systèmes de taille modérée.
+      </p>
+    
+      <h3>Conclusion</h3>
+      <p>
+        L’ordonnancement EDF non préemptif a prouvé son efficacité sur cet ensemble de tâches. Le code a été implémenté en C et validé par simulation. Une extension possible serait d’explorer d’autres politiques d’ordonnancement (RM, priorité fixe…).
+      </p>
+
+      <a href="../projects.html" class="btn">← Retour aux projets</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Axel Fouchard</p>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
